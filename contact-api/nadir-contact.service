@@ -1,0 +1,24 @@
+[Unit]
+Description=contact-form API (SES sender)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust User and WorkingDirectory to where you deploy the code on the EC2.
+User=www-data
+Group=raffle
+WorkingDirectory=/var/www/alex-contact-api
+ExecStart=/home/raffle/.nvm/versions/node/v20.20.2/bin/node server.mjs
+Restart=on-failure
+RestartSec=3
+
+# Config (edit TO_EMAIL / FROM_EMAIL to your verified SES addresses)
+Environment=PORT=3056
+Environment=HOST=127.0.0.1
+Environment=AWS_REGION=eu-west-1
+Environment=TO_EMAIL=alexandro.priftuli@gmail.com
+Environment=FROM_EMAIL=alex@nodnod.studio
+
+[Install]
+WantedBy=multi-user.target

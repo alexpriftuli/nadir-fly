@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Solar PV inspection — procedure, deliverables, equipment</title>
+  <meta name="description" content="Thermographic survey of crystalline-silicon PV arrays. Five-stage procedure, IEC TS 62446-3 anomaly classification, severity-ranked GeoJSON/CSV/PDF deliverables, fixed turnarounds.">
+  <link rel="canonical" href="https://solar.nodnod.digital/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solar PV inspection — procedure & deliverables">
+  <meta property="og:description" content="Five-stage solar thermography procedure with severity-ranked GIS deliverables.">
+  <meta property="og:image" content="images/cover-solar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="nadir">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="favicon-32x32.png" alt="" width="24" height="24">
+      <span>NADIR</span>
+      <span class="mono small brand-sub">Solar PV Drone Inspection</span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="is-active">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="right">
+      <!-- lang selector hidden for now
+      <div class="lang" role="group" aria-label="Language">
+        <button class="is-on" aria-pressed="true">EN</button>
+        <button aria-pressed="false">SL</button>
+      </div>
+      -->
+      <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Request a pilot <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section style="padding:80px 32px 40px;">
+    <div class="container">
+      <div class="eyebrow">Services</div>
+      <h1 class="h-display" style="margin:10px 0 18px; max-width:24ch;">Solar PV inspection. One delivery discipline.</h1>
+      <p class="lede" style="max-width:62ch; margin:0 0 28px;">Utility and rooftop solar PV thermography (<a class="mono ilink" href="#solar">#solar</a>). A five-stage procedure (<a class="mono ilink" href="#procedure">#procedure</a>), a fixed severity-ranked output format, fixed turnarounds.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="#procedure">Jump to · Procedure</a>
+        <a class="btn btn-ghost" href="#equipment">Jump to · Equipment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solar intro -->
+  <section id="solar" class="section" style="padding-top:80px; padding-bottom:80px; border-top:1px solid var(--c-border);">
+    <div class="container">
+      <div class="split">
+        <div class="media-frame">
+          <img src="images/cover-solar.jpg" alt="Thermal pass over a utility-scale ground-mount solar array">
+          <span class="img-meta">thermal pass · 30–40 m AGL · 9.3 MWp ground-mount</span>
+        </div>
+        <div>
+          <span class="eyebrow">§ 01 · Solar PV</span>
+          <h2 class="h-1" style="margin:6px 0 16px;">Solar PV inspection</h2>
+          <p class="body" style="margin:0 0 16px;">Thermographic survey of crystalline-silicon arrays. Two-pass capture: nadir thermal at 30–40 m AGL for anomaly mapping, oblique RGB for context and module-ID confirmation. Anomalies classified by ΔT against ambient and string-baseline, severity-ranked S1–S4, returned as GeoJSON tied to module geometry.</p>
+          <p class="body" style="margin:0;">Standard reference: <span class="mono">IEC TS 62446-3</span> for thermography, <span class="mono">IEC 61724-1</span> for environmental conditions during the flight window.</p>
+          <div class="badge-row">
+            <span class="badge ok">Open Cat A3</span>
+            <span class="badge">≤ 50 MWp · single-day</span>
+            <span class="badge">String-level resolution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solar inspection procedure (preserved) -->
+  <section id="procedure" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Solar inspection procedure</span>
+      <h2 class="h-1" style="margin:6px 0 14px;">How a flight runs, end to end.</h2>
+      <p class="body" style="max-width:64ch; margin:0 0 32px; color:var(--c-ink-3);">Compliant with IEC TS 62446-3 (outdoor IR thermography of PV) and IEC 61724-1 (PV performance monitoring). EU 2019/947 Open Category A1/A3. GDPR-compliant data handling — site imagery stored encrypted, deleted on client request.</p>
+
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary">
+            <span class="num">01</span>
+            <span class="title">Pre-flight planning</span>
+            <span class="dur">remote · 1–3 days before</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Site briefing call — plant layout, MW, string/inverter map, access, on-site contact.</li>
+              <li>Review of prior reports and current performance-ratio anomalies, if available.</li>
+              <li>Flight window scheduled for clear-sky conditions, irradiance ≥ 600 W/m² (IEC TS 62446-3 minimum).</li>
+              <li>NOTAM / airspace clearance filed with Slovenia CAA (or competent authority for IT, ES, SI, AT or HR).</li>
+              <li>Operator registration, A1/A3 certificate, €1M liability and hull cover verified for the flight date.</li>
+              <li>Pre-flight checklist sent to client: gate access, livestock notice, inverter status, on-site duration.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">02</span>
+            <span class="title">On-site setup</span>
+            <span class="dur">30–45 min</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Site walk with plant contact; confirmation that all strings are energised and inverters operational.</li>
+              <li>Irradiance measurement with calibrated pyranometer / reference cell — logged for the report.</li>
+              <li>Ambient temperature, wind speed, cloud cover recorded.</li>
+              <li>Mission upload: automated grid pattern, ~30–40 m AGL, nadir orientation, 80% front / 70% side overlap.</li>
+              <li>Safety perimeter established; ground crew briefed.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">03</span>
+            <span class="title">Aerial thermal + RGB capture</span>
+            <span class="dur">1-2 hours / 5 MW</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>DJI Mavic 3 Thermal Advanced — radiometric thermal (640×512, ±2 °C) + 4/3 CMOS RGB, synchronised capture.</li>
+              <li>Automated mission with manual override available.</li>
+              <li>Live anomaly check on a second screen; obvious hotspots flagged for a low-altitude verification pass.</li>
+              <li>Coverage of full array plus combiner boxes, inverter housings, and transformer enclosures where line-of-sight permits.</li>
+              <li>Battery swaps pre-planned to avoid interrupting a string row mid-capture.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">04</span>
+            <span class="title">Post-processing and analysis</span>
+            <span class="dur">3–5 working days</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Radiometric mosaic stitched in DJI Terra / DroneDeploy.</li>
+              <li>Anomaly classification per IEC TS 62446-3:
+                <ul>
+                  <li><strong>Category 1</strong> — single cell / hotspot (ΔT 5–20 °C)</li>
+                  <li><strong>Category 2</strong> — multi-cell / substring fault</li>
+                  <li><strong>Category 3</strong> — full module / bypass diode / disconnected string</li>
+                  <li><strong>Category 4</strong> — junction box, connector, or interconnect fault</li>
+                </ul>
+              </li>
+              <li>Each defect geo-tagged, photographed (thermal + RGB), and cross-referenced to string ID.</li>
+              <li>Severity prioritisation: critical (immediate revenue / safety impact), major (within 30 days), minor (next maintenance cycle).</li>
+              <li>Operator QC pass before report release.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">05</span>
+            <span class="title">Deliverables</span>
+            <span class="dur">—</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>PDF report — executive summary, methodology, weather log, full defect list with images, severity ranking, recommended action.</li>
+              <li>Interactive web map — clickable defects with thermal + RGB images and GPS coordinates.</li>
+              <li>CSV / GeoJSON export of all anomalies for CMMS / SCADA integration.</li>
+              <li>High-resolution orthomosaic (RGB + thermal) on request.</li>
+              <li>Raw radiometric data available for client archival.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">06</span>
+            <span class="title">Follow-up</span>
+            <span class="dur">—</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>30-minute debrief call to walk through findings and prioritisation.</li>
+              <li>Optional re-inspection of repaired defects.</li>
+              <li>Annual or semi-annual cadence available under framework retainer.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <h3 class="h-3" style="margin:32px 0 12px;">Typical timelines</h3>
+      <div class="table-scroll" style="max-width:680px;">
+      <table class="table">
+        <thead><tr><th>Plant size</th><th>On-site</th><th class="num">Report delivery</th></tr></thead>
+        <tbody>
+          <tr><td>Up to 1 MW</td><td class="mono">2–3 h</td><td class="num">3 working days</td></tr>
+          <tr><td>1–5 MW</td><td class="mono">4–8 h</td><td class="num">4 working days</td></tr>
+          <tr><td>5–20 MW</td><td class="mono">1-2 days</td><td class="num">5 working days</td></tr>
+          <tr><td>20 MW+</td><td class="mono">2–4 days</td><td class="num">7–10 working days</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section id="equipment" class="section" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Equipment</span>
+          <h2 class="h-1" style="margin-top:6px;">Standard plus a named upgrade path.</h2>
+        </div>
+        <p class="body" style="max-width:42ch; margin:0; color:var(--c-ink-3);">One aircraft on day one. The upgrade unit isn't on a shelf — it's named so you can see how the operation scales without surprise.</p>
+      </div>
+      <div class="grid-2 equip-grid">
+        <div class="card">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Standard equipment · day-1</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Mavic 3 Thermal Advanced</h3>
+              </div>
+              <span class="badge ok">Open Cat A3</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Class</span><span class="v">EU C1 · CE marked</span></li>
+              <li><span class="k">Thermal</span><span class="v">640 × 512 · ±2 °C · radiometric</span></li>
+              <li><span class="k">RGB</span><span class="v">4/3 CMOS · synchronised</span></li>
+              <li><span class="k">MTOW</span><span class="v">Sub-1 kg · transponder-equipped</span></li>
+              <li><span class="k">Operator weight class</span><span class="v">Below 25 kg, Open A3 compliant</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card" style="border-style:dashed; background:var(--c-surface);">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Upgrade path · on request</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Matrice 400 · Zenmuse H30T</h3>
+              </div>
+              <span class="badge warn">Specific Cat</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Class</span><span class="v">Specific Cat · declaration</span></li>
+              <li><span class="k">Thermal</span><span class="v">H30T · 1280 × 1024 · radiometric</span></li>
+              <li><span class="k">RGB</span><span class="v">Zoom 34× · wide + tele</span></li>
+              <li><span class="k">MTOW</span><span class="v">Heavy-lift · dual-payload</span></li>
+              <li><span class="k">Lead time</span><span class="v">Quoted per site · 2–3 wk planning</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot callout -->
+  <section class="section" style="padding-top:0; padding-bottom:120px;">
+    <div class="container">
+      <div class="callout">
+        <div>
+          <div class="eyebrow">Pilot project</div>
+          <h2 class="h-2" style="margin:8px 0 12px;">First inspection at-cost, before you commit a portfolio.</h2>
+          <p class="body" style="margin:0; max-width:58ch;">A single site, scoped end-to-end, delivered with the full data package. You evaluate the deliverables against your O&amp;M workflow before any framework agreement is discussed.</p>
+        </div>
+        <div class="cta-col">
+          <a href="contact.html" class="btn btn-dark">Request pilot scoping <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="mono small" style="color:var(--c-muted);">Typical response · ≤ 1 working day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:14px;">
+          <img class="brand-mark" src="favicon-32x32.png" alt="" width="24" height="24"><span>NADIR</span>
+        </div>
+        <p style="margin:0 0 18px; max-width:36ch; color:#a9b3c2;">Utility &amp; rooftop solar PV inspection with IT-grade data delivery. Operating across IT · ES · SI · AT · HR.</p>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">CAA UAS OP · SVN-RP-5e7paass28ru</span>
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">Generali EU · Liability € 1,000,000 · Hull € 12,500</span>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#solar">Solar PV inspection</a></li>
+          <li><a href="services.html#procedure">Thermal &amp; visual survey</a></li>
+          <li><a href="index.html#deliverables">GIS deliverables</a></li>
+          <li><a href="services.html#equipment">Equipment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operator</h4>
+        <ul>
+          <li><a href="index.html#scope">Capability scope</a></li>
+          <li><a href="services.html#equipment">Equipment</a></li>
+          <li><a href="privacy.html">Compliance</a></li>
+          <li><a href="contact.html">Pilot project</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a class="mono" href="mailto:alex@nodnod.studio">alex@nodnod.studio</a></li>
+          <li><a class="mono" href="tel:+38669708697">+386 69 708697</a></li>
+          <li><span class="mono" style="color:#8893a4;">Mo–Fr · 08:00–18:00 CET</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span>© 2026 NADIR · Alexandro Priftuli S.P.</span>
+      <span><a href="privacy.html" style="margin-right:18px;">Privacy</a><a href="privacy.html">Terms</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

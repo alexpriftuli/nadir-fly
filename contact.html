@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Contact — send a brief, get a quote in one working day</title>
+  <meta name="description" content="Send a solar PV inspection brief. We answer every operations enquiry within one working day in EN, IT or SL.">
+  <link rel="canonical" href="https://solar.nodnod.digital/contact.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="nadir">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="favicon-32x32.png" alt="" width="24" height="24">
+      <span>NADIR</span>
+      <span class="mono small brand-sub">Solar PV Drone Inspection</span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="is-active">Contact</a>
+    </nav>
+    <div class="right">
+      <!-- lang selector hidden for now
+      <div class="lang" role="group" aria-label="Language">
+        <button class="is-on" aria-pressed="true">EN</button>
+        <button aria-pressed="false">SL</button>
+      </div>
+      -->
+      <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Request a pilot <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section style="padding:80px 32px 120px;">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1 class="h-display" style="margin:10px 0 18px; max-width:24ch;">Send a brief. Get a quote in one working day.</h1>
+      <p class="lede" style="max-width:58ch; margin:0 0 56px;">We answer every operations enquiry within one working day, in English, Italian or Slovene.</p>
+
+      <div class="contact-grid">
+        <div class="stack">
+          <div class="card" style="padding:28px;">
+            <div class="eyebrow">Direct contact</div>
+            <ul class="dl-list">
+              <li><span class="small">Email</span><a class="mono" style="font-size:var(--t-15); color:var(--c-ink-1);" href="mailto:alex@nodnod.studio">alex@nodnod.studio</a></li>
+              <li><span class="small">Phone</span><a class="mono" style="font-size:var(--t-15); color:var(--c-ink-1);" href="tel:+38669708697">+386 69 708697</a></li>
+              <li><span class="small">Response SLA</span><span class="body" style="margin:0;">≤ 1 working day, 08:00–18:00 CET (Mo–Fr)</span></li>
+              <li><span class="small">Languages</span><span class="body" style="margin:0;">EN · IT · SL</span></li>
+              <li><span class="small">Coverage</span><span class="body" style="margin:0;">IT · ES · SI · AT · HR. Cross-border movements declared in advance.</span></li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:28px;">
+            <div class="eyebrow">What to include in your first message</div>
+            <ul class="check-list">
+              <li><span class="mark">✓</span><div><div class="k">Site address or coordinates</div><div class="small v">Lat/lon or a Google Maps pin is fine — we'll do the airspace overlay from there.</div></div></li>
+              <li><span class="mark">✓</span><div><div class="k">Array type and capacity</div><div class="small v">Ground-mount or rooftop PV in MWp. Number of sites if it's a portfolio.</div></div></li>
+              <li><span class="mark">✓</span><div><div class="k">Target inspection window</div><div class="small v">A range of weeks works better than a fixed date — irradiance matters.</div></div></li>
+              <li><span class="mark">✓</span><div><div class="k">Procurement contact</div><div class="small v">Who signs the framework. Saves a round-trip.</div></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="card" id="contact-form" style="padding:28px;" data-endpoint="/api/contact" novalidate>
+          <div class="eyebrow" style="margin-bottom:18px;">Request a pilot</div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-company-url">Company website (leave blank)</label>
+            <input id="f-company-url" name="company_url" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" required placeholder="Anna Kovač"></div>
+            <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" required placeholder="ops@company.eu"></div>
+            <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" placeholder="Company d.o.o."></div>
+            <div class="field">
+              <label for="f-type">Site type</label>
+              <select id="f-type" name="site_type">
+                <option value="">— Select —</option>
+                <option>Ground-mount PV</option>
+                <option>Rooftop PV</option>
+                <option>Multi-site portfolio</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-cap">Capacity</label><input id="f-cap" name="capacity" class="mono" placeholder="9.3 MWp"></div>
+            <div class="field"><label for="f-window">Target window</label><input id="f-window" name="window" class="mono" placeholder="2026-W18 → W24"></div>
+            <div class="field span-2">
+              <label for="f-brief">Brief (1 paragraph)</label>
+              <textarea id="f-brief" name="brief" rows="5" required placeholder="Site, capacity, where it is, what you'd like checked, anything we should know."></textarea>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:22px; gap:14px; flex-wrap:wrap;">
+            <span class="small">We reply within 1 working day. No newsletter, no automated follow-ups.</span>
+            <button class="btn btn-primary" type="submit">Send brief <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:14px;">
+          <img class="brand-mark" src="favicon-32x32.png" alt="" width="24" height="24"><span>NADIR</span>
+        </div>
+        <p style="margin:0 0 18px; max-width:36ch; color:#a9b3c2;">Utility &amp; rooftop solar PV inspection with IT-grade data delivery. Operating across IT · ES · SI · AT · HR.</p>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">CAA UAS OP · SVN-RP-5e7paass28ru</span>
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">Generali EU · Liability € 1,000,000 · Hull € 12,500</span>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#solar">Solar PV inspection</a></li>
+          <li><a href="services.html#procedure">Thermal &amp; visual survey</a></li>
+          <li><a href="index.html#deliverables">GIS deliverables</a></li>
+          <li><a href="services.html#equipment">Equipment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operator</h4>
+        <ul>
+          <li><a href="index.html#scope">Capability scope</a></li>
+          <li><a href="services.html#equipment">Equipment</a></li>
+          <li><a href="privacy.html">Compliance</a></li>
+          <li><a href="contact.html">Pilot project</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a class="mono" href="mailto:alex@nodnod.studio">alex@nodnod.studio</a></li>
+          <li><a class="mono" href="tel:+38669708697">+386 69 708697</a></li>
+          <li><span class="mono" style="color:#8893a4;">Mo–Fr · 08:00–18:00 CET</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span>© 2026 NADIR · Alexandro Priftuli S.P.</span>
+      <span><a href="privacy.html" style="margin-right:18px;">Privacy</a><a href="privacy.html">Terms</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
