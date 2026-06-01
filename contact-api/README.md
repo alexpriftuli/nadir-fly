@@ -82,11 +82,7 @@ The form is already wired to `/api/contact`, so the live page works once steps 1
 - **Logs:** `journalctl -u nadir-contact -f`.
 - **Updating:** copy a new `server.mjs` to `/var/www/alex-contact-api/` and `sudo systemctl restart nadir-contact`.
 
-## Removing the old Lambda (the blocked public-URL attempt)
+## Deploying
 ```bash
-aws lambda delete-function-url-config --function-name nadir-contact --region eu-west-1
-aws lambda delete-function           --function-name nadir-contact --region eu-west-1
-aws iam delete-role-policy   --role-name nadir-contact-lambda-role --policy-name ses-send
-aws iam detach-role-policy   --role-name nadir-contact-lambda-role --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-aws iam delete-role          --role-name nadir-contact-lambda-role
+rsync -avz -e "ssh -i ~/.ssh/other/nodnod.pem" --exclude ".git" --exclude "contact-api" . ubuntu@34.243.28.120:/var/www/solar
 ```
