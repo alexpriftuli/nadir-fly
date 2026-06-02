@@ -1,6 +1,6 @@
 # Contact form backend — Node service on EC2 + SES
 
-The contact form POSTs **same-origin** to `https://solar.nodnod.digital/api/contact`.
+The contact form POSTs **same-origin** to `https://nadir-fly.com/api/contact`.
 nginx reverse-proxies that to a small Node service (`server.mjs`) running under
 systemd, which sends the message to your Gmail via Amazon SES using the **EC2
 instance role** (no access keys on disk). Same-origin = no CORS, and no public
@@ -62,14 +62,14 @@ curl -s -X POST http://127.0.0.1:3056/ -H 'content-type: application/json' \
 
 ### 5. nginx
 Add the contents of `nginx-contact.conf` inside the `server { }` block that serves
-`solar.nodnod.digital`, then:
+`nadir-fly.com`, then:
 ```bash
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
 ### 6. Test end-to-end (sends a real email once SES is verified)
 ```bash
-curl -s -X POST https://solar.nodnod.digital/api/contact \
+curl -s -X POST https://nadir-fly.com/api/contact \
   -H 'content-type: application/json' \
   -d '{"name":"Test","email":"alexandro.priftuli@gmail.com","brief":"hello from prod"}'
 # → {"ok":true}  and an email lands in your Gmail
