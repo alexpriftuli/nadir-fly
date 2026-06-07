@@ -4,10 +4,12 @@
 // role for credentials (no keys on disk).
 //
 // Env vars (set in the systemd unit):
-//   TO_EMAIL     your Gmail (SES-verified)
-//   FROM_EMAIL   verified SES sender (e.g. alex@nodnod.studio)
-//   AWS_REGION   eu-west-1
-//   PORT/HOST    optional (default 127.0.0.1:3001)
+//   TO_EMAIL            your Gmail (SES-verified)
+//   FROM_EMAIL          verified SES sender (e.g. alex@nadir-fly.com)
+//   AWS_REGION          eu-west-1
+//   RECAPTCHA_SECRET    reCAPTCHA v3 secret key (optional; if unset, bot check is skipped)
+//   RECAPTCHA_MIN_SCORE minimum v3 score to accept (optional, default 0.5)
+//   PORT/HOST           optional (default 127.0.0.1:3001)
 
 import http from "node:http";
 import { SESv2Client, SendEmailCommand } from "@aws-sdk/client-sesv2";
@@ -18,9 +20,40 @@ const TO = process.env.TO_EMAIL;
 const FROM = process.env.FROM_EMAIL;
 const REGION = process.env.AWS_REGION || process.env.REGION || "eu-west-1";
 
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET;
+const RECAPTCHA_MIN_SCORE = Number(process.env.RECAPTCHA_MIN_SCORE || 0.5);
+
 const ses = new SESv2Client({ region: REGION });
 
 const clean = (v, max) => (v == null ? "" : String(v).trim().slice(0, max));
+
+// reCAPTCHA v3 server-side verification. Returns true when the token is valid,
+// the action matches, and the bot-likelihood score clears the threshold.
+// If no secret is configured the check is skipped (returns true).
+async function verifyRecaptcha(token, ip) {
+  if (!RECAPTCHA_SECRET) return true;
+  if (!token) return false;
+  const params = new URLSearchParams({ secret: RECAPTCHA_SECRET, response: token });
+  if (ip) params.set("remoteip", ip);
+  try {
+    const r = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: params,
+    });
+    const j = await r.json();
+    return j.success === true
+      && (j.action === undefined || j.action === "contact")
+      && typeof j.score === "number"
+      && j.score >= RECAPTCHA_MIN_SCORE;
+  } catch (err) {
+    // Fail OPEN on infrastructure error (Google/network unreachable) so a transient
+    // blip doesn't drop real B2B leads. The honeypot still guards. A definitive
+    // bad/low-score token above still fails closed.
+    console.error("reCAPTCHA verify unreachable — allowing through:", err);
+    return true;
+  }
+}
 const send = (res, status, body) => {
   res.writeHead(status, { "content-type": "application/json" });
   res.end(JSON.stringify(body));
@@ -43,6 +76,13 @@ const server = http.createServer((req, res) => {
 
     // Honeypot: bots fill this; pretend success.
     if (clean(data.company_url, 200)) return send(res, 200, { ok: true });
+
+    // reCAPTCHA v3 — verify before doing any work (skipped if no secret set).
+    const xff = (req.headers["x-forwarded-for"] || "").split(",")[0].trim();
+    const clientIp = xff || req.socket.remoteAddress || "";
+    if (!(await verifyRecaptcha(clean(data.recaptcha_token, 5000), clientIp))) {
+      return send(res, 400, { error: "Failed bot check" });
+    }
 
     const name = clean(data.name, 200);
     const email = clean(data.email, 200);

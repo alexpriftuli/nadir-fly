@@ -76,9 +76,23 @@ curl -s -X POST https://nadir-fly.com/api/contact \
 ```
 The form is already wired to `/api/contact`, so the live page works once steps 1–5 are done.
 
+## reCAPTCHA v3 (optional bot check)
+
+The form supports Google reCAPTCHA v3. It's **off until you configure both keys**, and the form works without it. reCAPTCHA loads lazily — only when a visitor first interacts with the form, not on passive page views.
+
+1. Create a v3 site at https://www.google.com/recaptcha/admin → register `nadir-fly.com` (add `localhost` for testing). You get a **site key** (public) and a **secret key** (private).
+2. **Site key** → in `contact.html`, replace `RECAPTCHA_SITE_KEY` in the form's `data-recaptcha-sitekey` attribute, then redeploy the static site.
+3. **Secret key** → in the systemd unit, uncomment `RECAPTCHA_SECRET` and paste it (optionally `RECAPTCHA_MIN_SCORE`, default `0.5`), then:
+   ```bash
+   sudo cp nadir-contact.service /etc/systemd/system/
+   sudo systemctl daemon-reload && sudo systemctl restart nadir-contact
+   ```
+
+> Set the **site key before the secret**. If the secret is set but the page sends no token, every submission is rejected. The server rejects a missing/invalid/low-score token (HTTP 400) and the page shows the "email alex@nadir-fly.com directly" fallback — but it **fails open if Google's API is unreachable**, so a transient outage doesn't drop real leads (the honeypot still applies).
+
 ## Notes
 - **Reply-To** is the visitor's email — reply straight from Gmail.
-- **Spam:** hidden honeypot (`company_url`) is dropped server-side; add Turnstile/hCaptcha if needed.
+- **Spam:** hidden honeypot (`company_url`) dropped server-side, plus optional Google reCAPTCHA v3 (see below).
 - **Logs:** `journalctl -u nadir-contact -f`.
 - **Updating:** copy a new `server.mjs` to `/var/www/alex-contact-api/` and `sudo systemctl restart nadir-contact`.
 

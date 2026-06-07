@@ -8,7 +8,7 @@
     });
   }
 
-  // Language pill — placeholder state toggle; SL mirror not yet built.
+  // Language pill — placeholder state toggle; localized mirror not yet built.
   var lang = document.querySelector(".lang");
   if (lang) {
     lang.addEventListener("click", function (e) {
@@ -21,7 +21,7 @@
     });
   }
 
-  // Contact form — POST as JSON to the Lambda Function URL (AWS SES sends the email).
+  // Contact form — POST as JSON to /api/contact (EC2 Node service → Amazon SES).
   var form = document.getElementById("contact-form");
   if (form) {
     var status = form.querySelector(".form-status");
@@ -29,6 +29,42 @@
       if (!status) return;
       status.textContent = msg;
       status.className = "form-status " + (isErr ? "is-err" : "is-ok");
+    };
+
+    // reCAPTCHA v3 — loaded lazily on first form interaction so Google isn't
+    // contacted on passive page views. Site key lives in the form data attribute.
+    var siteKey = form.getAttribute("data-recaptcha-sitekey");
+    var hasKey = siteKey && siteKey !== "RECAPTCHA_SITE_KEY";
+    var recaptchaLoading = false;
+    var loadRecaptcha = function () {
+      if (recaptchaLoading || !hasKey) return;
+      recaptchaLoading = true;
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.google.com/recaptcha/api.js?render=" + encodeURIComponent(siteKey);
+      document.head.appendChild(s);
+    };
+    form.addEventListener("focusin", loadRecaptcha, { once: true });
+
+    var getToken = function () {
+      return new Promise(function (resolve) {
+        if (!hasKey) { resolve(""); return; }
+        loadRecaptcha();
+        var waited = 0;
+        (function waitForReady() {
+          if (typeof grecaptcha !== "undefined" && grecaptcha.execute) {
+            try {
+              grecaptcha.ready(function () {
+                grecaptcha.execute(siteKey, { action: "contact" }).then(resolve, function () { resolve(""); });
+              });
+            } catch (e) { resolve(""); }
+            return;
+          }
+          if (waited >= 5000) { resolve(""); return; }   // script never loaded (blocked/offline) → fall back
+          waited += 100;
+          setTimeout(waitForReady, 100);
+        })();
+      });
     };
 
     form.addEventListener("submit", function (e) {
@@ -41,30 +77,36 @@
       }
 
       var endpoint = form.getAttribute("data-endpoint");
-      if (!endpoint || endpoint.indexOf("YOUR-LAMBDA-URL") !== -1) {
-        setStatus("Form endpoint not configured yet — email alex@nodnod.studio directly.", true);
+      if (!endpoint) {
+        setStatus("Form endpoint not configured yet — email alex@nadir-fly.com directly.", true);
         return;
       }
-
-      var payload = {};
-      new FormData(form).forEach(function (v, k) { payload[k] = v; });
 
       var btn = form.querySelector("button[type=submit]");
       var original = btn ? btn.innerHTML : "";
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
 
-      fetch(endpoint, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload)
+      loadRecaptcha();
+      getToken().then(function (token) {
+        var payload = {};
+        new FormData(form).forEach(function (v, k) { payload[k] = v; });
+        if (token) payload.recaptcha_token = token;
+
+        return fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload)
+        });
       })
         .then(function (r) { if (!r.ok) throw new Error("bad status"); return r.json(); })
         .then(function () {
           form.reset();
           setStatus("Thanks — your message has been sent. We'll reply within 1 working day.", false);
+          // GA4 conversion — only fires if analytics consent was granted (gtag exists).
+          if (window.gtag) window.gtag("event", "generate_lead", { method: "contact_form" });
         })
         .catch(function () {
-          setStatus("Something went wrong. Please email alex@nodnod.studio directly.", true);
+          setStatus("Something went wrong. Please email alex@nadir-fly.com directly.", true);
         })
         .finally(function () {
           if (btn) { btn.disabled = false; btn.innerHTML = original; }
