@@ -1,0 +1,13 @@
+{
+  "name": "nadir-contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.600.0"
+  }
+}
