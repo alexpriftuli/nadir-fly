@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ispezione fotovoltaica con drone · mappatura termografica delle anomalie, dati GIS · IT / ES / SI / AT / HR</title>
+  <meta name="description" content="Termografia aerea di impianti fotovoltaici a terra e su tetto. Rilevamento delle anomalie a livello di stringa, consegnato in GeoJSON, CSV ordinato per gravità e PDF firmato. Operatore UAS registrato presso la CAA slovena, assicurazione RC da €1M.">
+  <link rel="canonical" href="https://nadir-fly.com/it/index.html">
+  <link rel="alternate" hreflang="en" href="https://nadir-fly.com/index.html">
+  <link rel="alternate" hreflang="it" href="https://nadir-fly.com/it/index.html">
+  <link rel="alternate" hreflang="sl" href="https://nadir-fly.com/sl/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://nadir-fly.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="sl_SI">
+  <meta property="og:url" content="https://nadir-fly.com/it/index.html">
+  <meta property="og:title" content="Ispezione fotovoltaica con drone e dati pronti per i tuoi sistemi">
+  <meta property="og:description" content="Rilievi termografici e visivi per portafogli fotovoltaici. Anomalie consegnate in GeoJSON, CSV ordinato per gravità e PDF annotato.">
+  <meta property="og:image" content="https://nadir-fly.com/images/hero-thermal.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nadir-fly.com/images/hero-thermal.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../site.css?v=5">
+</head>
+<body class="nadir">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24">
+      <span>NADIR</span>
+      <span class="mono small brand-sub">Ispezione fotovoltaica con drone</span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Principale">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="services.html">Servizi</a>
+      <a href="contact.html">Contatti</a>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Lingua">
+        <a href="../index.html">EN</a>
+        <a href="index.html" class="is-on" aria-current="page">IT</a>
+        <a href="../sl/index.html">SL</a>
+      </div>
+      <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Richiedi un'ispezione <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="../images/hero-thermal.jpg">
+      <source src="../videos/hero-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-body">
+      <div class="eyebrow" style="color:rgba(255,255,255,.65); margin-bottom:18px;">Ispezione fotovoltaica</div>
+      <h1 class="h-display">Ispezione fotovoltaica con<br><span class="accent-light">dati pronti per i tuoi sistemi.</span></h1>
+      <p class="lede">Rilievi termografici e visivi per portafogli fotovoltaici, da impianti a terra alle coperture. Le anomalie arrivano in GeoJSON, CSV ordinato per gravità e un PDF annotato. Non un file video.</p>
+      <div class="meta-row">
+        <a href="contact.html" class="btn btn-primary">Richiedi un'ispezione <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#deliverables" class="btn btn-ghost">Esempi di output</a>
+      </div>
+    </div>
+    <span class="frame-tag" style="bottom:18px; left:32px;">▸ HOVER · DJI MAVIC 3 THERMAL · IR 640×512 · GSD 5 cm/px</span>
+    <span class="frame-tag" style="bottom:18px; right:32px;">◉ REC · NADIR-026 · 09:42:11 · 38°C · WHITEHOT</span>
+  </section>
+
+  <section style="padding:32px 32px 0;">
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-chip"><span class="k">Operatore UAS · CAA</span><span class="v">SVN-RP-5e7paass28ru</span></div>
+        <div class="trust-chip"><span class="k">RC + corpo macchina</span><span class="v">€ 1.000.000 · Generali EU</span></div>
+        <div class="trust-chip"><span class="k">Strumentazione</span><span class="v">Mavic 3 Thermal · EU C1</span></div>
+        <div class="trust-chip"><span class="k">Lingue · Area</span><span class="v">EN · IT · SL</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modalità di incarico -->
+  <section class="section" style="padding-top:80px; padding-bottom:40px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Incarichi</span>
+          <h2 class="h-1" style="margin-top:6px;">Due modalità di incarico, un unico standard di consegna.</h2>
+        </div>
+        <p class="body" style="max-width:40ch; margin:0; color:var(--c-ink-3);">Audit singoli e contratti di flotta condividono la stessa disciplina di output: dati strutturati, ordinati per gravità, pronti per essere importati direttamente nel tuo software di O&amp;M.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <a href="services.html#solar"><img class="card-img" src="../images/cover-solar.jpg" alt="Vista termica aerea di un impianto fotovoltaico su scala utility"></a>
+          <div class="card-body">
+            <div class="eyebrow" style="margin-bottom:8px;">SERVIZIO / 01</div>
+            <h3 class="h-3" style="margin:4px 0 12px;">Audit termografico del singolo impianto</h3>
+            <p class="body" style="margin:0 0 18px;">Un solo sito, una singola visita. Termografia aerea di impianti a terra e su tetto, rilevamento delle anomalie a livello di stringa, classificazione della gravità per singolo modulo, mappa delle anomalie in GeoJSON e report PDF firmato.</p>
+            <a href="services.html#solar" class="card-link">Scopri di più <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+        <article class="card">
+          <a href="services.html#solar"><img class="card-img" src="../images/hero-thermal.jpg" alt="Scansione termica aerea su una flotta di impianti fotovoltaici"></a>
+          <div class="card-body">
+            <div class="eyebrow" style="margin-bottom:8px;">SERVIZIO / 02</div>
+            <h3 class="h-3" style="margin:4px 0 12px;">Contratto di flotta fotovoltaica</h3>
+            <p class="body" style="margin:0 0 18px;">Screening annuale e post-evento su tutto il portafoglio con un unico contratto. Un volo di riferimento per sito, interventi post-guasto inclusi, monitoraggio della gravità anno su anno. Prezzo al MW.</p>
+            <a href="services.html#solar" class="card-link">Scopri di più <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Output -->
+  <section class="section" id="deliverables" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Output</span>
+          <h2 class="h-1" style="margin-top:6px;">Cosa ricevi, e quando.</h2>
+        </div>
+        <p class="body" style="max-width:40ch; margin:0; color:var(--c-ink-3);">Ogni output ha un nome, un formato e una scadenza. Niente "ti mandiamo il report quando è pronto", ogni elaborato ha un tempo di consegna in giorni lavorativi.</p>
+      </div>
+      <div class="table-scroll">
+      <table class="table">
+        <thead>
+          <tr><th>Output</th><th>Formato</th><th>Standard di riferimento</th><th class="num">Consegna</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="font-weight:500;">Mappa delle anomalie</strong><div class="small">Anomalie termiche per stringa, georeferenziate</div></td>
+            <td class="mono">GeoJSON · KML</td><td class="mono small">IEC TS 62446-3</td><td class="num">5 giorni lavorativi</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Tabella ordinata per gravità</strong><div class="small">ΔT, ID pannello, fila di moduli, priorità di intervento</div></td>
+            <td class="mono">CSV · XLSX</td><td class="mono small">IEC 61724-1</td><td class="num">5 giorni lavorativi</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Report di ispezione</strong><div class="small">Metodologia, strumentazione, registro meteo, copertina firmata</div></td>
+            <td class="mono">PDF · A4</td><td class="mono small">IEC TS 62446-3 §8</td><td class="num">7 giorni lavorativi</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Ortomosaico</strong><div class="small">RGB + termico, GeoTIFF, EPSG:3794</div></td>
+            <td class="mono">GeoTIFF</td><td class="mono small">Opzionale</td><td class="num">+3 giorni lavorativi</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Archivio immagini grezze</strong><div class="small">R-JPEG, EXIF conservati, link cloud per 7 giorni</div></td>
+            <td class="mono">R-JPEG · ZIP</td><td class="mono small">-</td><td class="num">2 giorni lavorativi</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="../docs/sample-solar-thermal-report.pdf" download>Scarica un report di esempio (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Il costo di non saperlo -->
+  <section class="section" style="padding-top:80px; padding-bottom:40px;">
+    <div class="container">
+      <span class="eyebrow">Il costo di non saperlo</span>
+      <h2 class="h-1" style="margin:6px 0 14px; max-width:24ch;">Un guasto termico non fa scattare allarmi. Erode la resa, in silenzio.</h2>
+      <p class="body" style="max-width:60ch; margin:0 0 32px; color:var(--c-ink-3);">I guasti a livello di stringa restano invisibili alla maggior parte dei sistemi di monitoraggio, finché la produzione persa non compare nel contatore. A volte un'intera stagione dopo.</p>
+      <div class="stat-strip">
+        <div class="stat-cell">
+          <span class="fig">⅓</span>
+          <span class="cap">della produzione di un modulo va persa quando un solo diodo di bypass si attiva su un hotspot non rilevato.</span>
+        </div>
+        <div class="stat-cell">
+          <span class="fig">2–5%</span>
+          <span class="cap">dei moduli viene tipicamente segnalato come anomalo da una scansione termografica su un impianto datato.</span>
+        </div>
+        <div class="stat-cell">
+          <span class="fig">≈ €7.700</span>
+          <span class="cap">all'anno di produzione non fatturata, con un tasso di anomalie del 2% non rilevato su un impianto da 5 MWp.</span>
+          <span class="src">ipotesi: ≈1,1 MWh/kWp · €70/MWh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confronto tra metodi -->
+  <section class="section" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Metodi a confronto</span>
+          <h2 class="h-1" style="margin-top:6px;">Stesso volo, risultato diverso.</h2>
+        </div>
+      </div>
+      <div class="table-scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Test manuale curva I-V / stringhe</th>
+            <th>Tipico rilievo con drone</th>
+            <th class="own">NADIR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="font-weight:500;">Velocità</strong></td>
+            <td>Giorni per sito, a campione</td>
+            <td>1–2 h / MW</td>
+            <td class="own">1–2 h / MW</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Fermo impianto</strong></td>
+            <td>Stringhe scollegate per il test</td>
+            <td>Nessuno, volo a impianto acceso</td>
+            <td class="own">Nessuno, volo a impianto acceso</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Copertura</strong></td>
+            <td>Solo stringhe a campione</td>
+            <td>Intero campo, termico</td>
+            <td class="own">Ogni modulo, collegato all'ID stringa</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Cosa ricevi</strong></td>
+            <td>Foglio di calcolo compilato a mano</td>
+            <td>Video + PDF</td>
+            <td class="own">GeoJSON + CSV + PDF IEC · pronto per CMMS</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambito reale -->
+  <section class="section" id="scope" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="cap-grid">
+        <div>
+          <span class="eyebrow">Ambito reale</span>
+          <h2 class="h-1" style="margin:6px 0 18px;">Cosa possiamo fare oggi, senza giri di parole.</h2>
+          <p class="lede" style="margin:0; max-width:42ch;">Siamo una realtà a operatore singolo. Da subito operiamo in Categoria Aperta A3, siti senza persone non coinvolte nell'area di volo. La Categoria Specifica e il BVLOS sono disponibili previa dichiarazione, con i tempi di pianificazione comunicati in anticipo.</p>
+        </div>
+        <ul class="cap-list">
+          <li class="card cap-row">
+            <span class="badge ok" style="margin-top:2px;">Da subito</span>
+            <div><div class="k">Cat. Aperta A3 · oggi</div><div class="small v">Operatore singolo, un solo drone. Equipaggiamento classe C1. Impianti a terra e fotovoltaico rurale, siti recintati.</div></div>
+          </li>
+          <li class="card cap-row">
+            <span class="badge warn" style="margin-top:2px;">Su richiesta</span>
+            <div><div class="k">Cat. Specifica · su dichiarazione</div><div class="small v">Dichiarazione STS-01 o PDRA-S01, 2–3 settimane di pianificazione. Impianti su tetto adiacenti a spazi pubblici, MTOM più elevato.</div></div>
+          </li>
+          <li class="card cap-row">
+            <span class="badge warn" style="margin-top:2px;">Su richiesta</span>
+            <div><div class="k">BVLOS · con partner</div><div class="small v">Campagne su grandi flotte e corridoi realizzate con un team di osservatori partner. Preventivo per sito.</div></div>
+          </li>
+          <li class="card cap-row">
+            <span class="badge danger" style="margin-top:2px;">Non offerto</span>
+            <div><div class="k">Notturno e sopra le persone · escluso</div><div class="small v">Non offerto. Preferiamo segnalare un operatore qualificato piuttosto che promettere troppo.</div></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progetto pilota -->
+  <section class="section" style="padding-top:0; padding-bottom:120px;">
+    <div class="container">
+      <div class="callout">
+        <div>
+          <div class="eyebrow">Progetto pilota</div>
+          <h2 class="h-2" style="margin:8px 0 12px;">La prima ispezione a prezzo di costo, prima di affidarci un portafoglio.</h2>
+          <p class="body" style="margin:0; max-width:58ch;">Un solo sito, definito end-to-end, consegnato con il pacchetto dati completo. Valuti gli output rispetto al tuo flusso di O&amp;M prima di parlare di qualsiasi accordo.</p>
+        </div>
+        <div class="cta-col">
+          <a href="contact.html" class="btn btn-dark">Richiedi un'ispezione <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="mono small" style="color:var(--c-muted);">Risposta tipica · ≤ 1 giorno lavorativo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:14px;">
+          <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24"><span>NADIR</span>
+        </div>
+        <p style="margin:0 0 18px; max-width:36ch; color:#a9b3c2;">Ispezione fotovoltaica a terra e su tetto con dati pronti per i tuoi sistemi. Operativi in IT · ES · SI · AT · HR.</p>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">CAA UAS OP · SVN-RP-5e7paass28ru</span>
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">Generali EU · RC € 1.000.000 · Corpo macchina € 12.500</span>
+        </div>
+      </div>
+      <div>
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="services.html#solar">Ispezione fotovoltaica</a></li>
+          <li><a href="services.html#procedure">Rilievo termografico e visivo</a></li>
+          <li><a href="index.html#deliverables">Output GIS</a></li>
+          <li><a href="services.html#equipment">Strumentazione</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operatore</h4>
+        <ul>
+          <li><a href="index.html#scope">Ambito operativo</a></li>
+          <li><a href="services.html#equipment">Strumentazione</a></li>
+          <li><a href="services.html#faq">Domande frequenti</a></li>
+          <li><a href="privacy.html">Conformità</a></li>
+          <li><a href="contact.html">Progetto pilota</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li><a class="mono" href="mailto:alex@nadir-fly.com">alex@nadir-fly.com</a></li>
+          <li><a class="mono" href="tel:+38669708697">+386 69 708697</a></li>
+          <li><span class="mono" style="color:#8893a4;">Lun–Ven · 08:00–18:00 CET</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span>© 2026 NADIR · Alexandro Priftuli S.P.</span>
+      <span><a href="privacy.html">Privacy</a></span>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=7"></script>
+</body>
+</html>

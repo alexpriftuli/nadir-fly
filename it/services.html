@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ispezione fotovoltaica · procedura, output, strumentazione</title>
+  <meta name="description" content="Rilievo termografico di impianti fotovoltaici al silicio cristallino. Procedura in cinque fasi, classificazione delle anomalie secondo IEC TS 62446-3, output GeoJSON/CSV/PDF ordinati per gravità, tempi di consegna fissi.">
+  <link rel="canonical" href="https://nadir-fly.com/it/services.html">
+  <link rel="alternate" hreflang="en" href="https://nadir-fly.com/services.html">
+  <link rel="alternate" hreflang="it" href="https://nadir-fly.com/it/services.html">
+  <link rel="alternate" hreflang="sl" href="https://nadir-fly.com/sl/services.html">
+  <link rel="alternate" hreflang="x-default" href="https://nadir-fly.com/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="sl_SI">
+  <meta property="og:url" content="https://nadir-fly.com/it/services.html">
+  <meta property="og:title" content="Ispezione fotovoltaica · procedura e output">
+  <meta property="og:description" content="Procedura di termografia fotovoltaica in cinque fasi con output GIS ordinati per gravità.">
+  <meta property="og:image" content="https://nadir-fly.com/images/cover-solar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nadir-fly.com/images/cover-solar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../site.css?v=5">
+</head>
+<body class="nadir">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24">
+      <span>NADIR</span>
+      <span class="mono small brand-sub">Ispezione fotovoltaica con drone</span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Principale">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="is-active">Servizi</a>
+      <a href="contact.html">Contatti</a>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Lingua">
+        <a href="../services.html">EN</a>
+        <a href="services.html" class="is-on" aria-current="page">IT</a>
+        <a href="../sl/services.html">SL</a>
+      </div>
+      <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Richiedi un'ispezione <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section style="padding:80px 32px 40px;">
+    <div class="container">
+      <div class="eyebrow">Servizi</div>
+      <h1 class="h-display" style="margin:10px 0 18px; max-width:24ch;">Ispezione fotovoltaica. Un'unica disciplina di consegna.</h1>
+      <p class="lede" style="max-width:62ch; margin:0 0 28px;">Termografia di impianti fotovoltaici a terra e su tetto (<a class="mono ilink" href="#solar">#solar</a>). Una procedura in cinque fasi (<a class="mono ilink" href="#procedure">#procedure</a>), un formato di output fisso e ordinato per gravità, tempi di consegna fissi.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="#procedure">Vai a · Procedura</a>
+        <a class="btn btn-ghost" href="#equipment">Vai a · Strumentazione</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solar intro -->
+  <section id="solar" class="section" style="padding-top:80px; padding-bottom:80px; border-top:1px solid var(--c-border);">
+    <div class="container">
+      <div class="split">
+        <div class="media-frame">
+          <img src="../images/cover-solar.jpg" alt="Passaggio termico su un impianto fotovoltaico a terra su scala utility">
+          <span class="img-meta">passaggio termico · 30–40 m AGL · 9,3 MWp a terra</span>
+        </div>
+        <div>
+          <span class="eyebrow">§ 01 · Fotovoltaico</span>
+          <h2 class="h-1" style="margin:6px 0 16px;">Ispezione fotovoltaica</h2>
+          <p class="body" style="margin:0 0 16px;">Rilievo termografico di impianti al silicio cristallino. Acquisizione a due passaggi: termico nadirale a 30–40 m AGL per la mappatura delle anomalie, RGB obliquo per il contesto e la conferma dell'ID modulo. Anomalie classificate per ΔT rispetto all'ambiente e alla baseline di stringa, ordinate per gravità S1–S4, restituite in GeoJSON legato alla geometria dei moduli.</p>
+          <p class="body" style="margin:0;">Standard di riferimento: <span class="mono">IEC TS 62446-3</span> per la termografia, <span class="mono">IEC 61724-1</span> per le condizioni ambientali durante la finestra di volo.</p>
+          <div class="badge-row">
+            <span class="badge ok">Cat. Aperta A3</span>
+            <span class="badge">≤ 5 MWp · in giornata</span>
+            <span class="badge">Risoluzione a livello di stringa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solar inspection procedure -->
+  <section id="procedure" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Procedura di ispezione fotovoltaica</span>
+      <h2 class="h-1" style="margin:6px 0 14px;">Come si svolge un volo, dall'inizio alla fine.</h2>
+      <p class="body" style="max-width:64ch; margin:0 0 32px; color:var(--c-ink-3);">Conforme a IEC TS 62446-3 (termografia IR in campo del fotovoltaico) e IEC 61724-1 (monitoraggio delle prestazioni del fotovoltaico). Categoria Aperta A1/A3 ai sensi del Reg. UE 2019/947. Gestione dei dati conforme al GDPR. Immagini del sito archiviate cifrate, eliminate su richiesta del cliente.</p>
+
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary">
+            <span class="num">01</span>
+            <span class="title">Pianificazione pre-volo</span>
+            <span class="dur">da remoto · 1–3 giorni prima</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Call di briefing sul sito: layout dell'impianto, MW, mappa stringhe/inverter, accessi, referente in loco.</li>
+              <li>Revisione dei report precedenti e delle anomalie attuali del performance ratio, se disponibili.</li>
+              <li>Finestra di volo programmata con cielo sereno, irraggiamento ≥ 600 W/m² (minimo IEC TS 62446-3).</li>
+              <li>NOTAM / autorizzazione allo spazio aereo presentati alla CAA slovena (o all'autorità competente per IT, ES, SI, AT o HR).</li>
+              <li>Registrazione operatore, certificato A1/A3, copertura RC da €1M e corpo macchina verificate per la data del volo.</li>
+              <li>Checklist pre-volo inviata al cliente: accesso ai cancelli, avviso animali, stato inverter, durata in loco.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">02</span>
+            <span class="title">Allestimento in loco</span>
+            <span class="dur">30–45 min</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Sopralluogo con il referente dell'impianto; conferma che tutte le stringhe siano in tensione e gli inverter operativi.</li>
+              <li>Misura dell'irraggiamento con piranometro / cella di riferimento calibrati, registrata per il report.</li>
+              <li>Temperatura ambiente, velocità del vento e copertura nuvolosa registrate.</li>
+              <li>Caricamento della missione: griglia automatica, ~30–40 m AGL, orientamento nadirale, sovrapposizione 80% frontale / 70% laterale.</li>
+              <li>Perimetro di sicurezza stabilito; team di terra istruito.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">03</span>
+            <span class="title">Acquisizione aerea termica + RGB</span>
+            <span class="dur">1–2 ore / 5 MW</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>DJI Mavic 3 Thermal: termico radiometrico (640×512, ±2 °C) + RGB CMOS 4/3, acquisizione sincronizzata.</li>
+              <li>Missione automatica con possibilità di comando manuale.</li>
+              <li>Controllo delle anomalie in tempo reale su un secondo schermo; gli hotspot evidenti vengono segnalati per un passaggio di verifica a bassa quota.</li>
+              <li>Copertura dell'intero campo più quadri di parallelo, alloggiamenti inverter e cabine di trasformazione dove la linea di vista lo consente.</li>
+              <li>Cambi batteria pianificati per non interrompere una fila di stringhe durante l'acquisizione.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">04</span>
+            <span class="title">Post-elaborazione e analisi</span>
+            <span class="dur">3–5 giorni lavorativi</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Mosaico radiometrico ricomposto in DJI Terra / DroneDeploy.</li>
+              <li>Classificazione delle anomalie secondo IEC TS 62446-3, su due assi:
+                <ul>
+                  <li>Gravità: <strong>classi di anomalia</strong> (Classes of Abnormalities, CoA, §7.3.2):
+                    <ul>
+                      <li><strong>CoA 1</strong>: nessuna anomalia, entro il normale range operativo</li>
+                      <li><strong>CoA 2</strong>: anomalia termica (tA): indagare la causa, correggere entro un periodo ragionevole</li>
+                      <li><strong>CoA 3</strong>: anomalia rilevante per la sicurezza (dtA): rischio imminente di shock / incendio, si raccomanda la disconnessione tempestiva</li>
+                    </ul>
+                  </li>
+                  <li>Pattern: <strong>matrice delle anomalie termiche</strong> (Allegato C): hotspot su singola cella (ΔT 5–20 °C), sottostringa, modulo intero / diodo di bypass / stringa scollegata, guasto a scatola di giunzione / connettore / interconnessione</li>
+                </ul>
+              </li>
+              <li>Ogni difetto geolocalizzato, fotografato (termico + RGB) e associato all'ID stringa.</li>
+              <li>Prioritizzazione per gravità: critico (impatto immediato su ricavi / sicurezza), maggiore (entro 30 giorni), minore (prossimo ciclo di manutenzione).</li>
+              <li>Controllo qualità dell'operatore prima del rilascio del report.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">05</span>
+            <span class="title">Output</span>
+            <span class="dur">-</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Report PDF: sintesi esecutiva, metodologia, registro meteo, elenco completo dei difetti con immagini, classificazione per gravità, azione consigliata.</li>
+              <li>Mappa web interattiva: difetti cliccabili con immagini termiche + RGB e coordinate GPS.</li>
+              <li>Esportazione CSV / GeoJSON di tutte le anomalie per l'integrazione con CMMS / SCADA.</li>
+              <li>Ortomosaico ad alta risoluzione (RGB + termico) su richiesta.</li>
+              <li>Dati radiometrici grezzi disponibili per l'archiviazione del cliente.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">06</span>
+            <span class="title">Follow-up</span>
+            <span class="dur">-</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Call di debrief di 30 minuti per illustrare i risultati e le priorità.</li>
+              <li>Re-ispezione opzionale dei difetti riparati.</li>
+              <li>Cadenza annuale o semestrale disponibile con contratto continuativo.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <h3 class="h-3" style="margin:32px 0 12px;">Tempistiche tipiche</h3>
+      <div class="table-scroll" style="max-width:680px;">
+      <table class="table">
+        <thead><tr><th>Dimensione impianto</th><th>In loco</th><th class="num">Consegna report</th></tr></thead>
+        <tbody>
+          <tr><td>Fino a 1 MW</td><td class="mono">2–3 h</td><td class="num">3 giorni lavorativi</td></tr>
+          <tr><td>1–5 MW</td><td class="mono">4–8 h</td><td class="num">4 giorni lavorativi</td></tr>
+          <tr><td>5–20 MW</td><td class="mono">1–2 giorni</td><td class="num">5 giorni lavorativi</td></tr>
+          <tr><td>20 MW+</td><td class="mono">2–4 giorni</td><td class="num">7–10 giorni lavorativi</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section id="equipment" class="section" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Strumentazione</span>
+          <h2 class="h-1" style="margin-top:6px;">Dotazione standard più un percorso di upgrade definito.</h2>
+        </div>
+        <p class="body" style="max-width:42ch; margin:0; color:var(--c-ink-3);">Un solo drone dal primo giorno. L'unità di upgrade non è già a magazzino: è indicata per nome, così puoi vedere come l'operatività cresce senza sorprese.</p>
+      </div>
+      <div class="grid-2 equip-grid">
+        <div class="card">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Dotazione standard · dal primo giorno</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Mavic 3 Thermal</h3>
+              </div>
+              <span class="badge ok">Cat. Aperta A3</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Classe</span><span class="v">EU C1 · marcatura CE</span></li>
+              <li><span class="k">Termico</span><span class="v">640 × 512 · ±2 °C · radiometrico</span></li>
+              <li><span class="k">RGB</span><span class="v">CMOS 4/3 · sincronizzato</span></li>
+              <li><span class="k">MTOW</span><span class="v">Sotto 1 kg · Remote ID + AirSense (ADS-B in)</span></li>
+              <li><span class="k">Classe di peso operatore</span><span class="v">Sotto 25 kg, conforme Open A3</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card" style="border-style:dashed; background:var(--c-surface);">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Percorso di upgrade · su richiesta</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Matrice 400 · Zenmuse H30T</h3>
+              </div>
+              <span class="badge warn">Cat. Specifica</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Classe</span><span class="v">Cat. Specifica · dichiarazione</span></li>
+              <li><span class="k">Termico</span><span class="v">H30T · 1280 × 1024 · radiometrico</span></li>
+              <li><span class="k">RGB</span><span class="v">Zoom 34× · grandangolo + tele</span></li>
+              <li><span class="k">MTOW</span><span class="v">Heavy-lift · doppio payload</span></li>
+              <li><span class="k">Tempi di attesa</span><span class="v">Preventivo per sito · 2–3 sett. di pianificazione</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Prima di scriverci</span>
+      <h2 class="h-1" style="margin:6px 0 32px;">FAQ</h2>
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary q">
+            <span class="title">Dovete spegnere l'impianto per ispezionarlo?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>No, anzi. Le stringhe devono essere in tensione e in produzione perché i guasti termici siano visibili, quindi voliamo durante il normale funzionamento. Nessun fermo, nessuna disconnessione.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Di chi sono i dati e dove vengono conservati?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Tuoi. Immagini e report sono archiviati cifrati all'interno dell'UE ed eliminati su richiesta. La gestione è conforme al GDPR. Nulla viene condiviso o pubblicato senza il tuo consenso.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">L'output si integra direttamente nel nostro CMMS o SCADA?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Sì. Le anomalie vengono restituite in GeoJSON legato alla geometria dei moduli e in CSV con ID stringa e classi di gravità, pronte per l'importazione diretta, senza reinserimento manuale.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Qual è l'impianto più piccolo che vale la pena ispezionare?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Ci concentriamo su impianti di taglia utility e di portafoglio. Per un impianto su tetto molto piccolo, un rilievo una tantum raramente si ripaga. Se è questo il caso, te lo diciamo con franchezza e ti indirizziamo a un operatore più adatto.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Quali condizioni servono per un rilievo valido?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Cielo sereno e irraggiamento ≥ 600 W/m² (minimo IEC TS 62446-3). Fissiamo una finestra di irraggiamento anziché una data fissa e riprogrammiamo se le condizioni non tengono.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Potete volare sui nostri siti oltre confine?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Sì, operiamo in Slovenia, nord Italia, Austria, Croazia e Spagna. I trasferimenti transfrontalieri vengono dichiarati all'autorità competente prima del volo.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot callout -->
+  <section class="section" style="padding-top:0; padding-bottom:120px;">
+    <div class="container">
+      <div class="callout">
+        <div>
+          <div class="eyebrow">Progetto pilota</div>
+          <h2 class="h-2" style="margin:8px 0 12px;">La prima ispezione a prezzo di costo, prima di affidarci un portafoglio.</h2>
+          <p class="body" style="margin:0; max-width:58ch;">Un solo sito, definito end-to-end, consegnato con il pacchetto dati completo. Valuti gli output rispetto al tuo flusso di O&amp;M prima di parlare di qualsiasi accordo.</p>
+        </div>
+        <div class="cta-col">
+          <a href="contact.html" class="btn btn-dark">Richiedi un'ispezione <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="mono small" style="color:var(--c-muted);">Risposta tipica · ≤ 1 giorno lavorativo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:14px;">
+          <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24"><span>NADIR</span>
+        </div>
+        <p style="margin:0 0 18px; max-width:36ch; color:#a9b3c2;">Ispezione fotovoltaica a terra e su tetto con dati pronti per i tuoi sistemi. Operativi in IT · ES · SI · AT · HR.</p>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">CAA UAS OP · SVN-RP-5e7paass28ru</span>
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">Generali EU · RC € 1.000.000 · Corpo macchina € 12.500</span>
+        </div>
+      </div>
+      <div>
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="services.html#solar">Ispezione fotovoltaica</a></li>
+          <li><a href="services.html#procedure">Rilievo termografico e visivo</a></li>
+          <li><a href="index.html#deliverables">Output GIS</a></li>
+          <li><a href="services.html#equipment">Strumentazione</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operatore</h4>
+        <ul>
+          <li><a href="index.html#scope">Ambito operativo</a></li>
+          <li><a href="services.html#equipment">Strumentazione</a></li>
+          <li><a href="services.html#faq">Domande frequenti</a></li>
+          <li><a href="privacy.html">Conformità</a></li>
+          <li><a href="contact.html">Progetto pilota</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li><a class="mono" href="mailto:alex@nadir-fly.com">alex@nadir-fly.com</a></li>
+          <li><a class="mono" href="tel:+38669708697">+386 69 708697</a></li>
+          <li><span class="mono" style="color:#8893a4;">Lun–Ven · 08:00–18:00 CET</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span>© 2026 NADIR · Alexandro Priftuli S.P.</span>
+      <span><a href="privacy.html">Privacy</a></span>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=7"></script>
+</body>
+</html>

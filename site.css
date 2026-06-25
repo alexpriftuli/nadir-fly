@@ -243,6 +243,10 @@ body{ margin: 0; }
 .nadir .lang button{ background: transparent; border:0; padding: 4px 8px;
   border-radius: var(--r-pill); color: var(--c-muted); cursor: pointer; font: inherit; }
 .nadir .lang button.is-on{ background: var(--c-ink-1); color:#fff; }
+.nadir .lang a{ padding: 4px 8px; border-radius: var(--r-pill);
+  color: var(--c-muted); font: inherit; }
+.nadir .lang a:hover{ color: var(--c-ink-1); }
+.nadir .lang a.is-on{ background: var(--c-ink-1); color: #fff; }
 .nadir .nav-toggle{ display:none; width:44px; height:44px; padding:0;
   flex-direction:column; gap:4px; align-items:center; justify-content:center;
   background:#fff; border:1px solid var(--c-border-2); border-radius: var(--r-2);
@@ -384,6 +388,29 @@ body{ margin: 0; }
   font-size:13px; line-height:1.7; color:#c8d0dc; white-space:pre-wrap; }
 
 /* ============================================================
+   Stat strip · method comparison · FAQ accordion
+   ============================================================ */
+.nadir .stat-strip{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1px; background: var(--c-border); border: 1px solid var(--c-border);
+  border-radius: var(--r-3); overflow: hidden; }
+.nadir .stat-cell{ background:#fff; padding: 28px 24px; display:flex;
+  flex-direction:column; gap: 8px; }
+.nadir .stat-cell .fig{ font-family: var(--font-mono); font-weight: 500;
+  font-size: var(--t-32); line-height: 1; color: var(--c-accent-deep);
+  letter-spacing: -0.01em; }
+.nadir .stat-cell .cap{ font-size: var(--t-14); color: var(--c-ink-2); line-height: 1.5; }
+.nadir .stat-cell .src{ font-family: var(--font-mono); font-size: var(--t-11);
+  color: var(--c-muted); letter-spacing: .02em; }
+
+.nadir .table td.own, .nadir .table th.own{ background: var(--c-accent-tint); }
+.nadir .table th.own{ color: var(--c-accent-deep); }
+.nadir .table td.own{ color: var(--c-ink-1); font-weight: 500; }
+
+.nadir .acc-summary.q{ grid-template-columns: 1fr 22px; }
+.nadir .acc-body.a{ padding-left: 4px; }
+.nadir .acc-body.a p{ margin: 0; }
+
+/* ============================================================
    Responsive — Tablet 721–1099
    ============================================================ */
 @media (min-width:721px) and (max-width:1099px){
@@ -418,6 +445,7 @@ body{ margin: 0; }
   .nadir .h-1{ font-size: 32px; }
 
   .nadir .trust-strip{ grid-template-columns: 1fr 1fr; }
+  .nadir .stat-strip{ grid-template-columns: 1fr; }
   .nadir .table-scroll .table{ min-width: 600px; }
   .nadir .split, .nadir .cap-grid, .nadir .contact-grid,
   .nadir .grid-2, .nadir .equip-grid, .nadir .form-grid{

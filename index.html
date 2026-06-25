@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solar PV drone inspection — thermal anomaly mapping, GIS deliverables · IT / ES / SI / AT / HR</title>
+  <title>Solar PV drone inspection · thermal anomaly mapping, GIS deliverables · IT / ES / SI / AT / HR</title>
   <meta name="description" content="Aerial thermography of utility and rooftop solar PV. String-level anomaly detection returned as GeoJSON, severity-ranked CSV and a signed PDF. Slovenia CAA registered, €1M insured.">
   <link rel="canonical" href="https://nadir-fly.com/index.html">
+  <link rel="alternate" hreflang="en" href="https://nadir-fly.com/index.html">
+  <link rel="alternate" hreflang="it" href="https://nadir-fly.com/it/index.html">
+  <link rel="alternate" hreflang="sl" href="https://nadir-fly.com/sl/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://nadir-fly.com/index.html">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="sl_SI">
   <meta property="og:url" content="https://nadir-fly.com/index.html">
   <meta property="og:title" content="Solar PV drone inspection with IT-grade data delivery">
   <meta property="og:description" content="Thermal & visual surveys for solar PV portfolios. Anomalies returned as GeoJSON, severity-ranked CSV and an annotated PDF.">
   <meta property="og:image" content="https://nadir-fly.com/images/hero-thermal.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://nadir-fly.com/images/hero-thermal.jpg">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="shortcut icon" href="favicon.ico">
@@ -22,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="site.css?v=3">
+  <link rel="stylesheet" href="site.css?v=5">
 </head>
 <body class="nadir">
 
@@ -38,12 +44,11 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="right">
-      <!-- lang selector hidden for now
       <div class="lang" role="group" aria-label="Language">
-        <button class="is-on" aria-pressed="true">EN</button>
-        <button aria-pressed="false">SL</button>
+        <a href="index.html" class="is-on" aria-current="page">EN</a>
+        <a href="it/index.html">IT</a>
+        <a href="sl/index.html">SL</a>
       </div>
-      -->
       <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Request a pilot <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -58,7 +63,7 @@
     <div class="hero-body">
       <div class="eyebrow" style="color:rgba(255,255,255,.65); margin-bottom:18px;">Solar PV inspection</div>
       <h1 class="h-display">Solar PV inspection with<br><span class="accent-light">IT-grade data delivery.</span></h1>
-      <p class="lede">Thermal &amp; visual surveys for utility and rooftop solar PV portfolios. Anomalies returned as GeoJSON, severity-ranked CSV, and an annotated PDF — not a video file.</p>
+      <p class="lede">Thermal &amp; visual surveys for utility and rooftop solar PV portfolios. Anomalies returned as GeoJSON, severity-ranked CSV, and an annotated PDF. Not a video file.</p>
       <div class="meta-row">
         <a href="contact.html" class="btn btn-primary">Request a pilot inspection <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#deliverables" class="btn btn-ghost">Sample deliverables</a>
@@ -95,7 +100,7 @@
           <div class="card-body">
             <div class="eyebrow" style="margin-bottom:8px;">SERVICE / 01</div>
             <h3 class="h-3" style="margin:4px 0 12px;">Utility solar thermal audit</h3>
-            <p class="body" style="margin:0 0 18px;">A single site, single visit. Aerial thermography of ground-mount and rooftop arrays — string-level anomaly detection, per-module severity ranking, GeoJSON anomaly map and a signed PDF report.</p>
+            <p class="body" style="margin:0 0 18px;">A single site, single visit. Aerial thermography of ground-mount and rooftop arrays, string-level anomaly detection, per-module severity ranking, GeoJSON anomaly map and a signed PDF report.</p>
             <a href="services.html#solar" class="card-link">Read more <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </article>
@@ -120,7 +125,7 @@
           <span class="eyebrow">Deliverables</span>
           <h2 class="h-1" style="margin-top:6px;">What lands in your inbox.</h2>
         </div>
-        <p class="body" style="max-width:40ch; margin:0; color:var(--c-ink-3);">Every output is named, formatted and time-bound. No "we'll send the report when it's ready" — every deliverable has a turnaround in working days.</p>
+        <p class="body" style="max-width:40ch; margin:0; color:var(--c-ink-3);">Every output is named, formatted and time-bound. No "we'll send the report when it's ready", every deliverable has a turnaround in working days.</p>
       </div>
       <div class="table-scroll">
       <table class="table">
@@ -146,13 +151,87 @@
           </tr>
           <tr>
             <td><strong style="font-weight:500;">Raw imagery archive</strong><div class="small">R-JPEG, EXIF preserved, 7-day cloud link</div></td>
-            <td class="mono">R-JPEG · ZIP</td><td class="mono small">—</td><td class="num">2 working days</td>
+            <td class="mono">R-JPEG · ZIP</td><td class="mono small">-</td><td class="num">2 working days</td>
           </tr>
         </tbody>
       </table>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
         <a class="btn btn-ghost" href="docs/sample-solar-thermal-report.pdf" download>Download sample report (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost of not inspecting -->
+  <section class="section" style="padding-top:80px; padding-bottom:40px;">
+    <div class="container">
+      <span class="eyebrow">The cost of not knowing</span>
+      <h2 class="h-1" style="margin:6px 0 14px; max-width:22ch;">A thermal fault doesn't trip an alarm. It just shaves yield.</h2>
+      <p class="body" style="max-width:60ch; margin:0 0 32px; color:var(--c-ink-3);">String-level faults stay invisible to most monitoring until the lost generation shows up in the meter. Sometimes a full season later.</p>
+      <div class="stat-strip">
+        <div class="stat-cell">
+          <span class="fig">⅓</span>
+          <span class="cap">of a module's output is removed when a single bypass diode activates on an undetected hotspot.</span>
+        </div>
+        <div class="stat-cell">
+          <span class="fig">2–5%</span>
+          <span class="cap">of modules a thermal sweep typically flags as anomalous on an aging utility array.</span>
+        </div>
+        <div class="stat-cell">
+          <span class="fig">≈ €7,700</span>
+          <span class="cap">a year in unbilled generation from a 2% anomaly rate left undetected on one 5 MWp site.</span>
+          <span class="src">assumes ≈1.1 MWh/kWp · €70/MWh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method comparison -->
+  <section class="section" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Why this way</span>
+          <h2 class="h-1" style="margin-top:6px;">Same flight, different outcome.</h2>
+        </div>
+      </div>
+      <div class="table-scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Manual IV-curve / string test</th>
+            <th>Typical drone survey</th>
+            <th class="own">NADIR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="font-weight:500;">Throughput</strong></td>
+            <td>Days per site, sampled</td>
+            <td>1–2 h / MW</td>
+            <td class="own">1–2 h / MW</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Plant downtime</strong></td>
+            <td>Strings disconnected to test</td>
+            <td>None, flown live</td>
+            <td class="own">None, flown live</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">Coverage</strong></td>
+            <td>Sampled strings only</td>
+            <td>Full array, thermal</td>
+            <td class="own">Every module, string-ID linked</td>
+          </tr>
+          <tr>
+            <td><strong style="font-weight:500;">What you get back</strong></td>
+            <td>Hand-keyed spreadsheet</td>
+            <td>Video + PDF</td>
+            <td class="own">GeoJSON + CSV + IEC PDF · CMMS-ready</td>
+          </tr>
+        </tbody>
+      </table>
       </div>
     </div>
   </section>
@@ -164,7 +243,7 @@
         <div>
           <span class="eyebrow">Honest scope</span>
           <h2 class="h-1" style="margin:6px 0 18px;">What we can do today, plainly.</h2>
-          <p class="lede" style="margin:0; max-width:42ch;">We are a one-operator firm. Day-1 capability is Open Category A3 — sites without uninvolved people in the flight area. Specific Category and BVLOS scopes are available on declaration, with planning lead times stated up front.</p>
+          <p class="lede" style="margin:0; max-width:42ch;">We are a one-operator firm. Day-1 capability is Open Category A3, sites without uninvolved people in the flight area. Specific Category and BVLOS scopes are available on declaration, with planning lead times stated up front.</p>
         </div>
         <ul class="cap-list">
           <li class="card cap-row">
@@ -231,6 +310,7 @@
         <ul>
           <li><a href="index.html#scope">Capability scope</a></li>
           <li><a href="services.html#equipment">Equipment</a></li>
+          <li><a href="services.html#faq">Common questions</a></li>
           <li><a href="privacy.html">Compliance</a></li>
           <li><a href="contact.html">Pilot project</a></li>
         </ul>
@@ -250,6 +330,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

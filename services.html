@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solar PV inspection — procedure, deliverables, equipment</title>
+  <title>Solar PV inspection · procedure, deliverables, equipment</title>
   <meta name="description" content="Thermographic survey of crystalline-silicon PV arrays. Five-stage procedure, IEC TS 62446-3 anomaly classification, severity-ranked GeoJSON/CSV/PDF deliverables, fixed turnarounds.">
   <link rel="canonical" href="https://nadir-fly.com/services.html">
+  <link rel="alternate" hreflang="en" href="https://nadir-fly.com/services.html">
+  <link rel="alternate" hreflang="it" href="https://nadir-fly.com/it/services.html">
+  <link rel="alternate" hreflang="sl" href="https://nadir-fly.com/sl/services.html">
+  <link rel="alternate" hreflang="x-default" href="https://nadir-fly.com/services.html">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="sl_SI">
   <meta property="og:url" content="https://nadir-fly.com/services.html">
-  <meta property="og:title" content="Solar PV inspection — procedure & deliverables">
+  <meta property="og:title" content="Solar PV inspection · procedure & deliverables">
   <meta property="og:description" content="Five-stage solar thermography procedure with severity-ranked GIS deliverables.">
   <meta property="og:image" content="https://nadir-fly.com/images/cover-solar.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://nadir-fly.com/images/cover-solar.jpg">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="shortcut icon" href="favicon.ico">
@@ -22,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="site.css?v=3">
+  <link rel="stylesheet" href="site.css?v=5">
 </head>
 <body class="nadir">
 
@@ -38,12 +44,11 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="right">
-      <!-- lang selector hidden for now
       <div class="lang" role="group" aria-label="Language">
-        <button class="is-on" aria-pressed="true">EN</button>
-        <button aria-pressed="false">SL</button>
+        <a href="services.html" class="is-on" aria-current="page">EN</a>
+        <a href="it/services.html">IT</a>
+        <a href="sl/services.html">SL</a>
       </div>
-      -->
       <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Request a pilot <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -91,7 +96,7 @@
     <div class="container">
       <span class="eyebrow">Solar inspection procedure</span>
       <h2 class="h-1" style="margin:6px 0 14px;">How a flight runs, end to end.</h2>
-      <p class="body" style="max-width:64ch; margin:0 0 32px; color:var(--c-ink-3);">Compliant with IEC TS 62446-3 (outdoor IR thermography of PV) and IEC 61724-1 (PV performance monitoring). EU 2019/947 Open Category A1/A3. GDPR-compliant data handling — site imagery stored encrypted, deleted on client request.</p>
+      <p class="body" style="max-width:64ch; margin:0 0 32px; color:var(--c-ink-3);">Compliant with IEC TS 62446-3 (outdoor IR thermography of PV) and IEC 61724-1 (PV performance monitoring). EU 2019/947 Open Category A1/A3. GDPR-compliant data handling. Site imagery stored encrypted, deleted on client request.</p>
 
       <div class="accordion">
         <details class="acc-item" open>
@@ -103,7 +108,7 @@
           </summary>
           <div class="acc-body">
             <ul>
-              <li>Site briefing call — plant layout, MW, string/inverter map, access, on-site contact.</li>
+              <li>Site briefing call: plant layout, MW, string/inverter map, access, on-site contact.</li>
               <li>Review of prior reports and current performance-ratio anomalies, if available.</li>
               <li>Flight window scheduled for clear-sky conditions, irradiance ≥ 600 W/m² (IEC TS 62446-3 minimum).</li>
               <li>NOTAM / airspace clearance filed with Slovenia CAA (or competent authority for IT, ES, SI, AT or HR).</li>
@@ -123,7 +128,7 @@
           <div class="acc-body">
             <ul>
               <li>Site walk with plant contact; confirmation that all strings are energised and inverters operational.</li>
-              <li>Irradiance measurement with calibrated pyranometer / reference cell — logged for the report.</li>
+              <li>Irradiance measurement with calibrated pyranometer / reference cell, logged for the report.</li>
               <li>Ambient temperature, wind speed, cloud cover recorded.</li>
               <li>Mission upload: automated grid pattern, ~30–40 m AGL, nadir orientation, 80% front / 70% side overlap.</li>
               <li>Safety perimeter established; ground crew briefed.</li>
@@ -140,7 +145,7 @@
           </summary>
           <div class="acc-body">
             <ul>
-              <li>DJI Mavic 3 Thermal — radiometric thermal (640×512, ±2 °C) + 4/3 CMOS RGB, synchronised capture.</li>
+              <li>DJI Mavic 3 Thermal: radiometric thermal (640×512, ±2 °C) + 4/3 CMOS RGB, synchronised capture.</li>
               <li>Automated mission with manual override available.</li>
               <li>Live anomaly check on a second screen; obvious hotspots flagged for a low-altitude verification pass.</li>
               <li>Coverage of full array plus combiner boxes, inverter housings, and transformer enclosures where line-of-sight permits.</li>
@@ -159,12 +164,16 @@
           <div class="acc-body">
             <ul>
               <li>Radiometric mosaic stitched in DJI Terra / DroneDeploy.</li>
-              <li>Anomaly classification per IEC TS 62446-3:
+              <li>Anomaly classification per IEC TS 62446-3, on two axes:
                 <ul>
-                  <li><strong>Category 1</strong> — single cell / hotspot (ΔT 5–20 °C)</li>
-                  <li><strong>Category 2</strong> — multi-cell / substring fault</li>
-                  <li><strong>Category 3</strong> — full module / bypass diode / disconnected string</li>
-                  <li><strong>Category 4</strong> — junction box, connector, or interconnect fault</li>
+                  <li>Severity: <strong>Classes of Abnormalities</strong> (§7.3.2):
+                    <ul>
+                      <li><strong>CoA 1</strong>: no abnormality, within normal operating range</li>
+                      <li><strong>CoA 2</strong>: thermal abnormality (tA): investigate cause, rectify within a reasonable period</li>
+                      <li><strong>CoA 3</strong>: safety-relevant abnormality (dtA): imminent shock / fire risk, recommend prompt disconnection</li>
+                    </ul>
+                  </li>
+                  <li>Pattern: <strong>thermal abnormality matrix</strong> (Annex C): single-cell hotspot (ΔT 5–20 °C), substring, full module / bypass diode / disconnected string, junction box / connector / interconnect fault</li>
                 </ul>
               </li>
               <li>Each defect geo-tagged, photographed (thermal + RGB), and cross-referenced to string ID.</li>
@@ -178,13 +187,13 @@
           <summary class="acc-summary">
             <span class="num">05</span>
             <span class="title">Deliverables</span>
-            <span class="dur">—</span>
+            <span class="dur">-</span>
             <span class="chev">▸</span>
           </summary>
           <div class="acc-body">
             <ul>
-              <li>PDF report — executive summary, methodology, weather log, full defect list with images, severity ranking, recommended action.</li>
-              <li>Interactive web map — clickable defects with thermal + RGB images and GPS coordinates.</li>
+              <li>PDF report: executive summary, methodology, weather log, full defect list with images, severity ranking, recommended action.</li>
+              <li>Interactive web map: clickable defects with thermal + RGB images and GPS coordinates.</li>
               <li>CSV / GeoJSON export of all anomalies for CMMS / SCADA integration.</li>
               <li>High-resolution orthomosaic (RGB + thermal) on request.</li>
               <li>Raw radiometric data available for client archival.</li>
@@ -196,7 +205,7 @@
           <summary class="acc-summary">
             <span class="num">06</span>
             <span class="title">Follow-up</span>
-            <span class="dur">—</span>
+            <span class="dur">-</span>
             <span class="chev">▸</span>
           </summary>
           <div class="acc-body">
@@ -232,7 +241,7 @@
           <span class="eyebrow">Equipment</span>
           <h2 class="h-1" style="margin-top:6px;">Standard plus a named upgrade path.</h2>
         </div>
-        <p class="body" style="max-width:42ch; margin:0; color:var(--c-ink-3);">One aircraft on day one. The upgrade unit isn't on a shelf — it's named so you can see how the operation scales without surprise.</p>
+        <p class="body" style="max-width:42ch; margin:0; color:var(--c-ink-3);">One aircraft on day one. The upgrade unit isn't on a shelf. It's named so you can see how the operation scales without surprise.</p>
       </div>
       <div class="grid-2 equip-grid">
         <div class="card">
@@ -249,7 +258,7 @@
               <li><span class="k">Class</span><span class="v">EU C1 · CE marked</span></li>
               <li><span class="k">Thermal</span><span class="v">640 × 512 · ±2 °C · radiometric</span></li>
               <li><span class="k">RGB</span><span class="v">4/3 CMOS · synchronised</span></li>
-              <li><span class="k">MTOW</span><span class="v">Sub-1 kg · transponder-equipped</span></li>
+              <li><span class="k">MTOW</span><span class="v">Sub-1 kg · Remote ID + AirSense (ADS-B in)</span></li>
               <li><span class="k">Operator weight class</span><span class="v">Below 25 kg, Open A3 compliant</span></li>
             </ul>
           </div>
@@ -273,6 +282,70 @@
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Before you brief us</span>
+      <h2 class="h-1" style="margin:6px 0 32px;">The questions procurement asks first.</h2>
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary q">
+            <span class="title">Do you need to shut the plant down to inspect it?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>No, the opposite. Strings have to be energised and producing for thermal faults to show, so we fly during normal operation. No downtime, no disconnections.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Who owns the data, and where is it stored?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>You do. Imagery and reports are stored encrypted within the EU and deleted on request. Handling is GDPR-compliant. Nothing is shared or published without your say-so.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Can the output drop straight into our CMMS or SCADA?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Yes. Anomalies come back as GeoJSON tied to module geometry and CSV with string IDs and severity classes, built to ingest directly, with no manual re-keying.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">What's the smallest site worth inspecting?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>We focus on utility and portfolio-scale PV. For a very small rooftop array a one-off survey rarely pays for itself. If that's the honest call, we'll say so and point you to a better-fit operator.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">What conditions do you need for a valid survey?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Clear sky and irradiance ≥ 600 W/m² (IEC TS 62446-3 minimum). We book an irradiation window rather than a fixed date, and reschedule if conditions don't hold.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Can you fly our sites across the border?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Yes, we operate across Slovenia, north Italy, Austria, Croatia and Spain. Cross-border movements are declared with the competent authority before the flight.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -320,6 +393,7 @@
         <ul>
           <li><a href="index.html#scope">Capability scope</a></li>
           <li><a href="services.html#equipment">Equipment</a></li>
+          <li><a href="services.html#faq">Common questions</a></li>
           <li><a href="privacy.html">Compliance</a></li>
           <li><a href="contact.html">Pilot project</a></li>
         </ul>
@@ -339,6 +413,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

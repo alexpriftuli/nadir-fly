@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pregled fotovoltaike · postopek, rezultati, oprema</title>
+  <meta name="description" content="Termografski pregled fotovoltaičnih elektrarn iz kristalnega silicija. Postopek v petih korakih, razvrstitev anomalij po IEC TS 62446-3, rezultati GeoJSON/CSV/PDF razvrščeni po resnosti, fiksni roki dostave.">
+  <link rel="canonical" href="https://nadir-fly.com/sl/services.html">
+  <link rel="alternate" hreflang="en" href="https://nadir-fly.com/services.html">
+  <link rel="alternate" hreflang="it" href="https://nadir-fly.com/it/services.html">
+  <link rel="alternate" hreflang="sl" href="https://nadir-fly.com/sl/services.html">
+  <link rel="alternate" hreflang="x-default" href="https://nadir-fly.com/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sl_SI">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:url" content="https://nadir-fly.com/sl/services.html">
+  <meta property="og:title" content="Pregled fotovoltaike · postopek in rezultati">
+  <meta property="og:description" content="Petstopenjski postopek termografije fotovoltaike z GIS rezultati, razvrščenimi po resnosti.">
+  <meta property="og:image" content="https://nadir-fly.com/images/cover-solar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nadir-fly.com/images/cover-solar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../site.css?v=5">
+</head>
+<body class="nadir">
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24">
+      <span>NADIR</span>
+      <span class="mono small brand-sub">Pregled fotovoltaike z dronom</span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Glavna navigacija">
+      <a href="index.html">Domov</a>
+      <a href="services.html" class="is-active">Storitve</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Jezik">
+        <a href="../services.html">EN</a>
+        <a href="../it/services.html">IT</a>
+        <a href="services.html" class="is-on" aria-current="page">SL</a>
+      </div>
+      <a class="btn btn-sm btn-primary cta-desktop" href="contact.html">Naročite pregled <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Meni">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section style="padding:80px 32px 40px;">
+    <div class="container">
+      <div class="eyebrow">Storitve</div>
+      <h1 class="h-display" style="margin:10px 0 18px; max-width:24ch;">Pregled fotovoltaike. Ena disciplina dostave.</h1>
+      <p class="lede" style="max-width:62ch; margin:0 0 28px;">Termografija fotovoltaičnih elektrarn na tleh in na strehi (<a class="mono ilink" href="#solar">#solar</a>). Postopek v petih korakih (<a class="mono ilink" href="#procedure">#procedure</a>), fiksen format rezultatov, razvrščen po resnosti, fiksni roki dostave.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="#procedure">Na · Postopek</a>
+        <a class="btn btn-ghost" href="#equipment">Na · Oprema</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solar intro -->
+  <section id="solar" class="section" style="padding-top:80px; padding-bottom:80px; border-top:1px solid var(--c-border);">
+    <div class="container">
+      <div class="split">
+        <div class="media-frame">
+          <img src="../images/cover-solar.jpg" alt="Termični prelet nad veliko fotovoltaično elektrarno na tleh">
+          <span class="img-meta">termični prelet · 30–40 m AGL · 9,3 MWp na tleh</span>
+        </div>
+        <div>
+          <span class="eyebrow">§ 01 · Fotovoltaika</span>
+          <h2 class="h-1" style="margin:6px 0 16px;">Pregled fotovoltaike</h2>
+          <p class="body" style="margin:0 0 16px;">Termografski pregled elektrarn iz kristalnega silicija. Zajem v dveh preletih: termični nadirni posnetek na 30–40 m AGL za kartiranje anomalij, poševni RGB za kontekst in potrditev ID modula. Anomalije razvrščene po ΔT glede na okolico in izhodišče niza, po resnosti S1–S4, vrnjene v GeoJSON, vezanem na geometrijo modulov.</p>
+          <p class="body" style="margin:0;">Referenčni standard: <span class="mono">IEC TS 62446-3</span> za termografijo, <span class="mono">IEC 61724-1</span> za okoljske pogoje med oknom leta.</p>
+          <div class="badge-row">
+            <span class="badge ok">Odprta kat. A3</span>
+            <span class="badge">≤ 5 MWp · v enem dnevu</span>
+            <span class="badge">Ločljivost na ravni niza</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed solar inspection procedure -->
+  <section id="procedure" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Postopek pregleda fotovoltaike</span>
+      <h2 class="h-1" style="margin:6px 0 14px;">Kako poteka let, od začetka do konca.</h2>
+      <p class="body" style="max-width:64ch; margin:0 0 32px; color:var(--c-ink-3);">Skladno z IEC TS 62446-3 (terenska IR termografija fotovoltaike) in IEC 61724-1 (spremljanje delovanja fotovoltaike). Odprta kategorija A1/A3 v skladu z Uredbo EU 2019/947. Ravnanje s podatki skladno z GDPR. Posnetki lokacije shranjeni šifrirano, izbrisani na zahtevo stranke.</p>
+
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary">
+            <span class="num">01</span>
+            <span class="title">Načrtovanje pred letom</span>
+            <span class="dur">na daljavo · 1–3 dni prej</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Uvodni klic o lokaciji: razporeditev elektrarne, MW, načrt nizov/razsmernikov, dostopi, kontakt na lokaciji.</li>
+              <li>Pregled prejšnjih poročil in trenutnih anomalij faktorja učinkovitosti (performance ratio), če so na voljo.</li>
+              <li>Okno leta načrtovano ob jasnem nebu, obsevanost ≥ 600 W/m² (minimum IEC TS 62446-3).</li>
+              <li>NOTAM / dovoljenje za zračni prostor vloženo pri slovenski CAA (ali pristojnem organu za IT, ES, SI, AT ali HR).</li>
+              <li>Registracija operaterja, potrdilo A1/A3, kritje odgovornosti 1 mio € in kasko preverjeni za datum leta.</li>
+              <li>Kontrolni seznam pred letom poslan stranki: dostop skozi vrata, obvestilo o živalih, stanje razsmernikov, trajanje na lokaciji.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">02</span>
+            <span class="title">Priprava na lokaciji</span>
+            <span class="dur">30–45 min</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Ogled z odgovornim za elektrarno; potrditev, da so vsi nizi pod napetostjo in razsmerniki delujejo.</li>
+              <li>Meritev obsevanosti z umerjenim piranometrom / referenčno celico, zabeležena za poročilo.</li>
+              <li>Temperatura okolice, hitrost vetra in oblačnost zabeležene.</li>
+              <li>Nalaganje misije: samodejna mreža, ~30–40 m AGL, nadirna usmeritev, prekrivanje 80 % vzdolžno / 70 % prečno.</li>
+              <li>Vzpostavljen varnostni perimeter; ekipa na tleh poučena.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">03</span>
+            <span class="title">Zračni zajem termično + RGB</span>
+            <span class="dur">1–2 uri / 5 MW</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>DJI Mavic 3 Thermal: radiometrični termični (640×512, ±2 °C) + RGB CMOS 4/3, sinhroniziran zajem.</li>
+              <li>Samodejna misija z možnostjo ročnega upravljanja.</li>
+              <li>Preverjanje anomalij v realnem času na drugem zaslonu; očitni hotspoti se označijo za preletni pregled na nizki višini.</li>
+              <li>Pokritost celotnega polja ter priključnih omaric, ohišij razsmernikov in transformatorskih postaj, kjer to dopušča vidno polje.</li>
+              <li>Menjave baterij načrtovane tako, da med zajemom ne prekinejo vrste nizov.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">04</span>
+            <span class="title">Naknadna obdelava in analiza</span>
+            <span class="dur">3–5 delovnih dni</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Radiometrični mozaik sestavljen v DJI Terra / DroneDeploy.</li>
+              <li>Razvrstitev anomalij po IEC TS 62446-3, po dveh oseh:
+                <ul>
+                  <li>Resnost: <strong>razredi nepravilnosti</strong> (Classes of Abnormalities, CoA, §7.3.2):
+                    <ul>
+                      <li><strong>CoA 1</strong>: ni nepravilnosti, znotraj običajnega obratovalnega območja</li>
+                      <li><strong>CoA 2</strong>: termična nepravilnost (tA): raziskati vzrok, odpraviti v razumnem roku</li>
+                      <li><strong>CoA 3</strong>: varnostno pomembna nepravilnost (dtA): neposredna nevarnost udara / požara, priporočen takojšen odklop</li>
+                    </ul>
+                  </li>
+                  <li>Vzorec: <strong>matrika termičnih nepravilnosti</strong> (Priloga C): hotspot na posamezni celici (ΔT 5–20 °C), podniz, cel modul / obvodna dioda / odklopljen niz, okvara priključne doze / konektorja / povezave</li>
+                </ul>
+              </li>
+              <li>Vsaka napaka geolocirana, fotografirana (termično + RGB) in povezana z ID niza.</li>
+              <li>Razvrstitev po resnosti: kritično (takojšen vpliv na prihodek / varnost), večje (v 30 dneh), manjše (naslednji cikel vzdrževanja).</li>
+              <li>Operaterjev nadzor kakovosti pred izdajo poročila.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">05</span>
+            <span class="title">Rezultati</span>
+            <span class="dur">-</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>Poročilo PDF: vodstveni povzetek, metodologija, vremenski dnevnik, popoln seznam napak s slikami, razvrstitev po resnosti, priporočen ukrep.</li>
+              <li>Interaktivni spletni zemljevid: napake na klik s termičnimi + RGB slikami in GPS-koordinatami.</li>
+              <li>Izvoz CSV / GeoJSON vseh anomalij za integracijo s CMMS / SCADA.</li>
+              <li>Ortomozaik visoke ločljivosti (RGB + termični) na zahtevo.</li>
+              <li>Surovi radiometrični podatki na voljo za arhiv stranke.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc-item">
+          <summary class="acc-summary">
+            <span class="num">06</span>
+            <span class="title">Spremljanje</span>
+            <span class="dur">-</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body">
+            <ul>
+              <li>30-minutni klic za predstavitev ugotovitev in prioritet.</li>
+              <li>Izbirni ponovni pregled popravljenih napak.</li>
+              <li>Letni ali polletni ritem na voljo z naročniško pogodbo.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <h3 class="h-3" style="margin:32px 0 12px;">Tipični roki</h3>
+      <div class="table-scroll" style="max-width:680px;">
+      <table class="table">
+        <thead><tr><th>Velikost elektrarne</th><th>Na lokaciji</th><th class="num">Dostava poročila</th></tr></thead>
+        <tbody>
+          <tr><td>Do 1 MW</td><td class="mono">2–3 h</td><td class="num">3 delovni dnevi</td></tr>
+          <tr><td>1–5 MW</td><td class="mono">4–8 h</td><td class="num">4 delovni dnevi</td></tr>
+          <tr><td>5–20 MW</td><td class="mono">1–2 dni</td><td class="num">5 delovnih dni</td></tr>
+          <tr><td>20 MW+</td><td class="mono">2–4 dni</td><td class="num">7–10 delovnih dni</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment -->
+  <section id="equipment" class="section" style="padding-top:80px; padding-bottom:80px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Oprema</span>
+          <h2 class="h-1" style="margin-top:6px;">Standardna oprema in določena pot nadgradnje.</h2>
+        </div>
+        <p class="body" style="max-width:42ch; margin:0; color:var(--c-ink-3);">En sam dron od prvega dne. Enota za nadgradnjo ni na zalogi: navedena je po imenu, da vidite, kako operativa raste brez presenečenj.</p>
+      </div>
+      <div class="grid-2 equip-grid">
+        <div class="card">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Standardna oprema · od prvega dne</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Mavic 3 Thermal</h3>
+              </div>
+              <span class="badge ok">Odprta kat. A3</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Razred</span><span class="v">EU C1 · oznaka CE</span></li>
+              <li><span class="k">Termični</span><span class="v">640 × 512 · ±2 °C · radiometrični</span></li>
+              <li><span class="k">RGB</span><span class="v">CMOS 4/3 · sinhronizirano</span></li>
+              <li><span class="k">MTOW</span><span class="v">Pod 1 kg · Remote ID + AirSense (ADS-B in)</span></li>
+              <li><span class="k">Razred mase</span><span class="v">Pod 25 kg, skladno z odprto kat. A3</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card" style="border-style:dashed; background:var(--c-surface);">
+          <div class="card-body">
+            <div class="eq-head">
+              <div>
+                <div class="eyebrow">Pot nadgradnje · na zahtevo</div>
+                <h3 class="h-3" style="margin-top:6px;">DJI Matrice 400 · Zenmuse H30T</h3>
+              </div>
+              <span class="badge warn">Posebna kat.</span>
+            </div>
+            <div class="dot-sep" style="margin:22px 0;"></div>
+            <ul class="kv-list">
+              <li><span class="k">Razred</span><span class="v">Posebna kat. · izjava</span></li>
+              <li><span class="k">Termični</span><span class="v">H30T · 1280 × 1024 · radiometrični</span></li>
+              <li><span class="k">RGB</span><span class="v">Zoom 34× · širokokotni + tele</span></li>
+              <li><span class="k">MTOW</span><span class="v">Heavy-lift · dvojni tovor</span></li>
+              <li><span class="k">Rok izvedbe</span><span class="v">Ponudba na lokacijo · 2–3 tedne načrtovanja</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="padding-top:80px; padding-bottom:80px; background:var(--c-surface);">
+    <div class="container">
+      <span class="eyebrow">Preden nam pišete</span>
+      <h2 class="h-1" style="margin:6px 0 32px;">Vprašanja, ki jih nabava zastavi najprej.</h2>
+      <div class="accordion">
+        <details class="acc-item" open>
+          <summary class="acc-summary q">
+            <span class="title">Ali je treba elektrarno za pregled izklopiti?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Ne, ravno nasprotno. Nizi morajo biti pod napetostjo in v proizvodnji, da so termične okvare vidne, zato letimo med običajnim obratovanjem. Brez zaustavitev, brez odklopov.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Čigavi so podatki in kje se hranijo?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Vaši. Posnetki in poročila so shranjeni šifrirano znotraj EU in izbrisani na zahtevo. Ravnanje je skladno z GDPR. Nič ni deljeno ali objavljeno brez vašega soglasja.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Ali se rezultati neposredno integrirajo v naš CMMS ali SCADA?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Da. Anomalije vrnemo v GeoJSON, vezanem na geometrijo modulov, in v CSV z ID nizov in razredi resnosti, pripravljene za neposreden uvoz, brez ročnega ponovnega vnosa.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Katera je najmanjša elektrarna, ki jo je vredno pregledati?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Osredotočamo se na velike elektrarne in portfelje. Pri zelo majhni strešni elektrarni se enkratni pregled redko izplača. Če je tako, vam to iskreno povemo in vas napotimo k primernejšemu operaterju.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Kakšni pogoji so potrebni za veljaven pregled?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Jasno nebo in obsevanost ≥ 600 W/m² (minimum IEC TS 62446-3). Določimo okno obsevanosti namesto fiksnega datuma in pregled prestavimo, če pogoji ne zdržijo.</p>
+          </div>
+        </details>
+        <details class="acc-item">
+          <summary class="acc-summary q">
+            <span class="title">Ali lahko letite na naših lokacijah čez mejo?</span>
+            <span class="chev">▸</span>
+          </summary>
+          <div class="acc-body a">
+            <p>Da, delujemo v Sloveniji, severni Italiji, Avstriji, na Hrvaškem in v Španiji. Čezmejne premike pred letom prijavimo pristojnemu organu.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilotni projekt -->
+  <section class="section" style="padding-top:0; padding-bottom:120px;">
+    <div class="container">
+      <div class="callout">
+        <div>
+          <div class="eyebrow">Pilotni projekt</div>
+          <h2 class="h-2" style="margin:8px 0 12px;">Prvi pregled po lastni ceni, preden nam zaupate portfelj.</h2>
+          <p class="body" style="margin:0; max-width:58ch;">Ena lokacija, opredeljena od začetka do konca, dostavljena s celotnim podatkovnim paketom. Rezultate ovrednotite glede na svoj potek dela O&amp;M, preden se pogovarjamo o kakršnem koli dogovoru.</p>
+        </div>
+        <div class="cta-col">
+          <a href="contact.html" class="btn btn-dark">Naročite pregled <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <span class="mono small" style="color:var(--c-muted);">Običajen odziv · ≤ 1 delovni dan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:14px;">
+          <img class="brand-mark" src="../favicon-32x32.png" alt="" width="24" height="24"><span>NADIR</span>
+        </div>
+        <p style="margin:0 0 18px; max-width:36ch; color:#a9b3c2;">Pregled fotovoltaike na tleh in na strehi s podatki, pripravljenimi za vaše sisteme. Delujemo v IT · ES · SI · AT · HR.</p>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">CAA UAS OP · SVN-RP-5e7paass28ru</span>
+          <span class="mono" style="font-size:var(--t-12); color:#8893a4;">Generali EU · odgovornost 1.000.000 € · kasko 12.500 €</span>
+        </div>
+      </div>
+      <div>
+        <h4>Storitve</h4>
+        <ul>
+          <li><a href="services.html#solar">Pregled fotovoltaike</a></li>
+          <li><a href="services.html#procedure">Termografski in vizualni pregled</a></li>
+          <li><a href="index.html#deliverables">GIS rezultati</a></li>
+          <li><a href="services.html#equipment">Oprema</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operater</h4>
+        <ul>
+          <li><a href="index.html#scope">Obseg delovanja</a></li>
+          <li><a href="services.html#equipment">Oprema</a></li>
+          <li><a href="services.html#faq">Pogosta vprašanja</a></li>
+          <li><a href="privacy.html">Skladnost</a></li>
+          <li><a href="contact.html">Pilotni projekt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a class="mono" href="mailto:alex@nadir-fly.com">alex@nadir-fly.com</a></li>
+          <li><a class="mono" href="tel:+38669708697">+386 69 708697</a></li>
+          <li><span class="mono" style="color:#8893a4;">Pon–Pet · 08:00–18:00 CET</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span>© 2026 NADIR · Alexandro Priftuli S.P.</span>
+      <span><a href="privacy.html">Zasebnost</a></span>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=7"></script>
+</body>
+</html>
